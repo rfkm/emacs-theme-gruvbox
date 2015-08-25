@@ -80,6 +80,14 @@
       (gruvbox-faded_aqua     (if (display-graphic-p) "#427b58" "color-66"))
       (gruvbox-faded_orange   (if (display-graphic-p) "#af3a03" "color-130"))
 
+      (gruvbox-dark_red       (if (display-graphic-p)  "#421E1E" "color-52"))
+      (gruvbox-dark_green     (if (display-graphic-p)  "#2B280F" "color-22"))
+      (gruvbox-dark_yellow    (if (display-graphic-p)  "#4D3B27" "color-3"))
+      (gruvbox-dark_blue      (if (display-graphic-p)  "#2B3C44" "color-4"))
+      (gruvbox-dark_purple    (if (display-graphic-p)  "#4E3D45" "color-57"))
+      (gruvbox-dark_aqua      (if (display-graphic-p)  "#36473A" "color-23"))
+      (gruvbox-dark_orange    (if (display-graphic-p)  "#613620" "color-130"))
+
       (gruvbox-delimiter-one    (if (display-graphic-p) "#458588" "color-30"))
       (gruvbox-delimiter-two    (if (display-graphic-p) "#b16286" "color-168"))
       (gruvbox-delimiter-three  (if (display-graphic-p) "#8ec07c" "color-108"))
@@ -91,195 +99,286 @@
       (gruvbox-lightblue4       (if (display-graphic-p) "#66999D" "LightBlue4"))
       (gruvbox-burlywood4       (if (display-graphic-p) "#BBAA97" "burlywood4"))
       (gruvbox-aquamarine4      (if (display-graphic-p) "#83A598" "aquamarine4"))
-      (gruvbox-turquoise4       (if (display-graphic-p) "#61ACBB" "turquoise4")))
+      (gruvbox-turquoise4       (if (display-graphic-p) "#61ACBB" "turquoise4"))
+      (gruvbox-violet           (if (display-graphic-p) "#8f85a1" "#8f85a1")))
 
   (custom-theme-set-faces
-    'gruvbox
+   'gruvbox
 
-    ;; UI
-    `(default                           ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-light0))))
-    `(cursor                            ((t (:background ,gruvbox-light0))))
-    `(mode-line                         ((t (:box nil :background ,gruvbox-dark4 :foreground ,gruvbox-dark0))))
-    `(mode-line-inactive                ((t (:box nil :background ,gruvbox-dark2 :foreground ,gruvbox-light4))))
-    `(fringe                            ((t (:background ,gruvbox-dark0))))
-    `(linum                             ((t (:foreground ,gruvbox-dark4))))
-    `(hl-line                           ((t (:background ,gruvbox-dark1))))
-    `(region                            ((t (:background ,gruvbox-dark2)))) ;;selection
-    `(secondary-selection               ((t (:background ,gruvbox-dark1))))
-    `(minibuffer-prompt                 ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-neutral_green :bold t))))
+   ;; UI
+   `(default                           ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-light1))))
+   `(cursor                            ((t (:background ,gruvbox-light0))))
+   `(mode-line                         ((t (:box nil :background ,gruvbox-dark0_soft :foreground ,gruvbox-neutral_green))))
+   `(mode-line-inactive                ((t (:box nil :background ,gruvbox-dark2 :foreground ,gruvbox-light4))))
+   `(fringe                            ((t (:background ,gruvbox-dark0))))
+   `(linum                             ((t (:foreground ,gruvbox-dark4))))
+   `(hl-line                           ((t (:background ,gruvbox-dark1))))
+   `(region                            ((t (:background ,gruvbox-dark2)))) ;;selection
+   `(secondary-selection               ((t (:background ,gruvbox-dark1))))
+   `(minibuffer-prompt                 ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-neutral_green :bold t))))
 
-    ;; Built-in syntax
-    `(font-lock-builtin-face            ((t (:foreground ,gruvbox-neutral_orange))))
-    `(font-lock-constant-face           ((t (:foreground ,gruvbox-neutral_purple))))
-    `(font-lock-comment-face            ((t (:foreground ,gruvbox-dark4))))
-    `(font-lock-function-name-face      ((t (:foreground ,gruvbox-neutral_green))))
-    `(font-lock-keyword-face            ((t (:foreground ,gruvbox-neutral_red))))
-    `(font-lock-string-face             ((t (:foreground ,gruvbox-neutral_green))))
-    `(font-lock-variable-name-face      ((t (:foreground ,gruvbox-neutral_blue))))
-    `(font-lock-type-face               ((t (:foreground ,gruvbox-neutral_purple))))
-    `(font-lock-warning-face            ((t (:foreground ,gruvbox-neutral_red :bold t))))
+   ;; Built-in syntax
+   `(font-lock-builtin-face            ((t (:foreground ,gruvbox-neutral_orange))))
+   `(font-lock-constant-face           ((t (:foreground ,gruvbox-violet))))
+   `(font-lock-comment-face            ((t (:foreground ,gruvbox-dark4))))
+   `(font-lock-function-name-face      ((t (:foreground ,gruvbox-neutral_green))))
+   `(font-lock-keyword-face            ((t (:foreground ,gruvbox-neutral_red))))
+   `(font-lock-string-face             ((t (:foreground ,gruvbox-neutral_green))))
+   `(font-lock-doc-face                ((t (:foreground ,gruvbox-burlywood4 :slant italic))))
+   `(font-lock-variable-name-face      ((t (:foreground ,gruvbox-neutral_blue))))
+   `(font-lock-type-face               ((t (:foreground ,gruvbox-neutral_purple))))
+   `(font-lock-warning-face            ((t (:foreground ,gruvbox-neutral_red :bold t))))
 
-    ;; whitespace-mode
-    `(whitespace-space                  ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-    `(whitespace-hspace                 ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-    `(whitespace-tab                    ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-    `(whitespace-newline                ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-    `(whitespace-trailing               ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-neutral_red))))
-    `(whitespace-line                   ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-neutral_red))))
-    `(whitespace-space-before-tab       ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-    `(whitespace-indentation            ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-    `(whitespace-empty                  ((t (:background nil :foreground nil))))
-    `(whitespace-space-after-tab        ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   ;; whitespace-mode
+   `(whitespace-space                  ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-hspace                 ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-tab                    ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-newline                ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-trailing               ((t (:background ,gruvbox-neutral_red))))
+   `(whitespace-line                   ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-neutral_red))))
+   `(whitespace-space-before-tab       ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-indentation            ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-empty                  ((t (:background ,gruvbox-neutral_red))))
+   `(whitespace-space-after-tab        ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
 
-    ;; RainbowDelimiters
-    `(rainbow-delimiters-depth-1-face   ((t (:foreground ,gruvbox-delimiter-one))))
-    `(rainbow-delimiters-depth-2-face   ((t (:foreground ,gruvbox-delimiter-two))))
-    `(rainbow-delimiters-depth-3-face   ((t (:foreground ,gruvbox-delimiter-three))))
-    `(rainbow-delimiters-depth-4-face   ((t (:foreground ,gruvbox-delimiter-four))))
-    `(rainbow-delimiters-depth-5-face   ((t (:foreground ,gruvbox-delimiter-one))))
-    `(rainbow-delimiters-depth-6-face   ((t (:foreground ,gruvbox-delimiter-two))))
-    `(rainbow-delimiters-depth-7-face   ((t (:foreground ,gruvbox-delimiter-three))))
-    `(rainbow-delimiters-depth-8-face   ((t (:foreground ,gruvbox-delimiter-four))))
-    `(rainbow-delimiters-depth-9-face   ((t (:foreground ,gruvbox-delimiter-one))))
-    `(rainbow-delimiters-depth-10-face  ((t (:foreground ,gruvbox-delimiter-two))))
-    `(rainbow-delimiters-depth-11-face  ((t (:foreground ,gruvbox-delimiter-three))))
-    `(rainbow-delimiters-depth-12-face  ((t (:foreground ,gruvbox-delimiter-four))))
-    `(rainbow-delimiters-unmatched-face ((t (:background nil :foreground ,gruvbox-light0))))
+   ;; RainbowDelimiters
+   `(rainbow-delimiters-depth-1-face   ((t (:foreground ,gruvbox-delimiter-one))))
+   `(rainbow-delimiters-depth-2-face   ((t (:foreground ,gruvbox-delimiter-two))))
+   `(rainbow-delimiters-depth-3-face   ((t (:foreground ,gruvbox-delimiter-three))))
+   `(rainbow-delimiters-depth-4-face   ((t (:foreground ,gruvbox-delimiter-four))))
+   `(rainbow-delimiters-depth-5-face   ((t (:foreground ,gruvbox-delimiter-one))))
+   `(rainbow-delimiters-depth-6-face   ((t (:foreground ,gruvbox-delimiter-two))))
+   `(rainbow-delimiters-depth-7-face   ((t (:foreground ,gruvbox-delimiter-three))))
+   `(rainbow-delimiters-depth-8-face   ((t (:foreground ,gruvbox-delimiter-four))))
+   `(rainbow-delimiters-depth-9-face   ((t (:foreground ,gruvbox-delimiter-one))))
+   `(rainbow-delimiters-depth-10-face  ((t (:foreground ,gruvbox-delimiter-two))))
+   `(rainbow-delimiters-depth-11-face  ((t (:foreground ,gruvbox-delimiter-three))))
+   `(rainbow-delimiters-depth-12-face  ((t (:foreground ,gruvbox-delimiter-four))))
+   `(rainbow-delimiters-unmatched-face ((t (:background nil :foreground ,gruvbox-light0))))
 
-    ;; linum-relative
-    `(linum-relative-current-face       ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-light4))))
+   ;; linum-relative
+   `(linum-relative-current-face       ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-light4))))
 
-    ;; Highlight indentation mode
-    `(highlight-indentation-current-column-face ((t (:background ,gruvbox-dark2 ))))
-    `(highlight-indentation-face                ((t (:background ,gruvbox-dark1 ))))
+   ;; Highlight indentation mode
+   `(highlight-indentation-current-column-face ((t (:background ,gruvbox-dark2 ))))
+   `(highlight-indentation-face                ((t (:background ,gruvbox-dark1 ))))
 
-    ;; Smartparens
-    `(sp-pair-overlay-face              ((t (:background ,gruvbox-dark2))))
-    ;`(sp-wrap-overlay-face             ((t (:inherit sp-wrap-overlay-face))))
-    ;`(sp-wrap-tag-overlay-face         ((t (:inherit sp-wrap-overlay-face))))
-    `(sp-show-pair-match-face           ((t (:background ,gruvbox-dark2)))) ;; Pair tags highlight
-    `(sp-show-pair-mismatch-face        ((t (:background ,gruvbox-neutral_red)))) ;; Highlight for bracket without pair
+   ;; Smartparens
+   `(sp-pair-overlay-face              ((t (:background ,gruvbox-dark2))))
+                                        ;`(sp-wrap-overlay-face             ((t (:inherit sp-wrap-overlay-face))))
+                                        ;`(sp-wrap-tag-overlay-face         ((t (:inherit sp-wrap-overlay-face))))
+   `(sp-show-pair-match-face           ((t (:background ,gruvbox-dark2)))) ;; Pair tags highlight
+   `(sp-show-pair-mismatch-face        ((t (:background ,gruvbox-neutral_red)))) ;; Highlight for bracket without pair
 
-    ;; elscreen
-    `(elscreen-tab-background-face      ((t (:box nil :background ,gruvbox-dark0)))) ;; Tab bar, not the tabs
-    `(elscreen-tab-control-face         ((t (:box nil :background ,gruvbox-dark2 :foreground ,gruvbox-neutral_red :underline nil)))) ;; The controls
-    `(elscreen-tab-current-screen-face  ((t (:box nil :background ,gruvbox-dark4 :foreground ,gruvbox-dark0)))) ;; Current tab
-    `(elscreen-tab-other-screen-face    ((t (:box nil :background ,gruvbox-dark2 :foreground ,gruvbox-light4 :underline nil)))) ;; Inactive tab
+   ;; elscreen
+   `(elscreen-tab-background-face      ((t (:box nil :background ,gruvbox-dark0)))) ;; Tab bar, not the tabs
+   `(elscreen-tab-control-face         ((t (:box nil :background ,gruvbox-dark2 :foreground ,gruvbox-neutral_red :underline nil)))) ;; The controls
+   `(elscreen-tab-current-screen-face  ((t (:box nil :background ,gruvbox-dark4 :foreground ,gruvbox-dark0)))) ;; Current tab
+   `(elscreen-tab-other-screen-face    ((t (:box nil :background ,gruvbox-dark2 :foreground ,gruvbox-light4 :underline nil)))) ;; Inactive tab
 
-    ;; ag (The Silver Searcher)
-    `(ag-hit-face                       ((t (:foreground ,gruvbox-neutral_blue))))
-    `(ag-match-face                     ((t (:foreground ,gruvbox-neutral_red))))
+   ;; ag (The Silver Searcher)
+   `(ag-hit-face                       ((t (:foreground ,gruvbox-neutral_blue))))
+   `(ag-match-face                     ((t (:foreground ,gruvbox-neutral_red))))
 
-    ;; Diffs
-    `(diff-changed                      ((t (:background nil :foreground ,gruvbox-light1))))
-    `(diff-added                        ((t (:background nil :foreground ,gruvbox-neutral_green))))
-    `(diff-removed                      ((t (:background nil :foreground ,gruvbox-neutral_red))))
-    `(diff-indicator-changed            ((t (:inherit diff-changed))))
-    `(diff-indicator-added              ((t (:inherit diff-added))))
-    `(diff-indicator-removed            ((t (:inherit diff-removed))))
+   ;; Diffs
+   `(diff-changed                      ((t (:background nil :foreground ,gruvbox-light1))))
+   `(diff-added                        ((t (:background nil :foreground ,gruvbox-neutral_green))))
+   `(diff-removed                      ((t (:background nil :foreground ,gruvbox-neutral_red))))
+   `(diff-indicator-changed            ((t (:inherit diff-changed))))
+   `(diff-indicator-added              ((t (:inherit diff-added))))
+   `(diff-indicator-removed            ((t (:inherit diff-removed))))
 
-    `(js2-warning                       ((t (:underline (:color ,gruvbox-bright_yellow :style wave)))))
-    `(js2-error                         ((t (:underline (:color ,gruvbox-bright_red :style wave)))))
-    `(js2-external-variable             ((t (:underline (:color ,gruvbox-bright_aqua :style wave)))))
-    `(js2-jsdoc-tag                     ((t (:background nil :foreground ,gruvbox-medium ))))
-    `(js2-jsdoc-type                    ((t (:background nil :foreground ,gruvbox-light4 ))))
-    `(js2-jsdoc-value                   ((t (:background nil :foreground ,gruvbox-light3 ))))
-    `(js2-function-param                ((t (:background nil :foreground ,gruvbox-bright_aqua ))))
-    `(js2-function-call                 ((t (:background nil :foreground ,gruvbox-bright_blue ))))
-    `(js2-instance-member               ((t (:background nil :foreground ,gruvbox-bright_orange ))))
-    `(js2-private-member                ((t (:background nil :foreground ,gruvbox-faded_yellow ))))
-    `(js2-private-function-call         ((t (:background nil :foreground ,gruvbox-faded_aqua ))))
-    `(js2-jsdoc-html-tag-name           ((t (:background nil :foreground ,gruvbox-light4 ))))
-    `(js2-jsdoc-html-tag-delimiter      ((t (:background nil :foreground ,gruvbox-light3 ))))
+   `(js2-warning                       ((t (:underline (:color ,gruvbox-bright_yellow :style wave)))))
+   `(js2-error                         ((t (:underline (:color ,gruvbox-bright_red :style wave)))))
+   `(js2-external-variable             ((t (:underline (:color ,gruvbox-bright_aqua :style wave)))))
+   `(js2-jsdoc-tag                     ((t (:background nil :foreground ,gruvbox-medium ))))
+   `(js2-jsdoc-type                    ((t (:background nil :foreground ,gruvbox-light4 ))))
+   `(js2-jsdoc-value                   ((t (:background nil :foreground ,gruvbox-light3 ))))
+   `(js2-function-param                ((t (:background nil :foreground ,gruvbox-bright_aqua ))))
+   `(js2-function-call                 ((t (:background nil :foreground ,gruvbox-bright_blue ))))
+   `(js2-instance-member               ((t (:background nil :foreground ,gruvbox-bright_orange ))))
+   `(js2-private-member                ((t (:background nil :foreground ,gruvbox-faded_yellow ))))
+   `(js2-private-function-call         ((t (:background nil :foreground ,gruvbox-faded_aqua ))))
+   `(js2-jsdoc-html-tag-name           ((t (:background nil :foreground ,gruvbox-light4 ))))
+   `(js2-jsdoc-html-tag-delimiter      ((t (:background nil :foreground ,gruvbox-light3 ))))
 
-    ;; popup-tip
-    `(popup-tip-face                    ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-neutral_yellow))))
+   ;; popup
+   `(popup-face                        ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-light1))))
+   `(popup-isearch-match               ((t (:background ,gruvbox-neutral_yellow :foreground ,gruvbox-dark1))))
+   `(popup-menu-face                   ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-light1))))
+   `(popup-menu-mouse-face             ((t (:background ,gruvbox-neutral_blue :foreground ,gruvbox-dark1))))
+   `(popup-menu-selection-face         ((t (:background ,gruvbox-neutral_purple :foreground ,gruvbox-dark1))))
+   `(popup-scroll-bar-background-face  ((t (:background ,gruvbox-dark1))))
+   `(popup-scroll-bar-foreground-face  ((t (:background ,gruvbox-medium))))
+   `(popup-tip-face                    ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-light1))))
 
-    ;; helm
-    `(helm-M-x-key                              ((t ( :foreground ,gruvbox-neutral_orange  ))))
-    `(helm-action                               ((t ( :foreground ,gruvbox-white :underline t ))))
-    `(helm-bookmark-addressbook                 ((t ( :foreground ,gruvbox-neutral_red ))))
-    `(helm-bookmark-directory                   ((t ( :foreground ,gruvbox-bright_purple ))))
-    `(helm-bookmark-file                        ((t ( :foreground ,gruvbox-faded_blue ))))
-    `(helm-bookmark-gnus                        ((t ( :foreground ,gruvbox-faded_purple ))))
-    `(helm-bookmark-info                        ((t ( :foreground ,gruvbox-turquoise4 ))))
-    `(helm-bookmark-man                         ((t ( :foreground ,gruvbox-sienna ))))
-    `(helm-bookmark-w3m                         ((t ( :foreground ,gruvbox-neutral_yellow ))))
-    `(helm-buffer-directory                     ((t ( :foreground ,gruvbox-white         :background ,gruvbox-bright_blue  ))))
-    `(helm-buffer-not-saved                     ((t ( :foreground ,gruvbox-faded_red ))))
-    `(helm-buffer-process                       ((t ( :foreground ,gruvbox-burlywood4 ))))
-    `(helm-buffer-saved-out                     ((t ( :foreground ,gruvbox-bright_red ))))
-    `(helm-buffer-size                          ((t ( :foreground ,gruvbox-bright_purple ))))
-    `(helm-candidate-number                     ((t ( :foreground ,gruvbox-neutral_green ))))
-    `(helm-ff-directory                         ((t ( :foreground ,gruvbox-neutral_purple ))))
-    `(helm-ff-executable                        ((t ( :foreground ,gruvbox-turquoise4  ))))
-    `(helm-ff-file                              ((t ( :foreground ,gruvbox-sienna ))))
-    `(helm-ff-invalid-symlink                   ((t ( :foreground ,gruvbox-white         :background ,gruvbox-bright_red   ))))
-    `(helm-ff-prefix                            ((t ( :foreground ,gruvbox-black         :background ,gruvbox-neutral_yellow))))
-    `(helm-ff-symlink                           ((t ( :foreground ,gruvbox-neutral_orange ))))
-    `(helm-grep-cmd-line                        ((t ( :foreground ,gruvbox-neutral_green ))))
-    `(helm-grep-file                            ((t ( :foreground ,gruvbox-faded_purple ))))
-    `(helm-grep-finish                          ((t ( :foreground ,gruvbox-turquoise4 ))))
-    `(helm-grep-lineno                          ((t ( :foreground ,gruvbox-neutral_orange ))))
-    `(helm-grep-match                           ((t ( :foreground ,gruvbox-neutral_yellow ))))
-    `(helm-grep-running                         ((t ( :foreground ,gruvbox-neutral_red ))))
-    `(helm-header                               ((t ( :foreground ,gruvbox-aquamarine4 ))))
-    `(helm-helper                               ((t ( :foreground ,gruvbox-aquamarine4 ))))
-    `(helm-history-deleted                      ((t ( :foreground ,gruvbox-black         :background ,gruvbox-bright_red   ))))
-    `(helm-history-remote                       ((t ( :foreground ,gruvbox-faded_red ))))
-    `(helm-lisp-completion-info                 ((t ( :foreground ,gruvbox-faded_orange ))))
-    `(helm-lisp-show-completion                 ((t ( :foreground ,gruvbox-bright_red ))))
-    `(helm-locate-finish                        ((t ( :foreground ,gruvbox-white         :background ,gruvbox-aquamarine4  ))))
-    `(helm-match                                ((t ( :foreground ,gruvbox-neutral_orange ))))
-    `(helm-moccur-buffer                        ((t ( :foreground ,gruvbox-bright_aqua :underline t                          ))))
-    `(helm-prefarg                              ((t ( :foreground ,gruvbox-turquoise4 ))))
-    `(helm-selection                            ((t ( :foreground ,gruvbox-white         :background ,gruvbox-dark2        ))))
-    `(helm-selection-line                       ((t ( :foreground ,gruvbox-white         :background ,gruvbox-dark2        ))))
-    `(helm-separator                            ((t ( :foreground ,gruvbox-faded_red ))))
-    `(helm-source-header                        ((t ( :foreground ,gruvbox-light2 ))))
-    `(helm-visible-mark                         ((t ( :foreground ,gruvbox-black         :background ,gruvbox-light3       ))))
+   ;; helm
+   `(helm-M-x-key                              ((t ( :foreground ,gruvbox-neutral_orange  ))))
+   `(helm-action                               ((t ( :foreground ,gruvbox-white :underline t ))))
+   `(helm-bookmark-addressbook                 ((t ( :foreground ,gruvbox-neutral_red ))))
+   `(helm-bookmark-directory                   ((t ( :foreground ,gruvbox-bright_purple ))))
+   `(helm-bookmark-file                        ((t ( :foreground ,gruvbox-faded_blue ))))
+   `(helm-bookmark-gnus                        ((t ( :foreground ,gruvbox-faded_purple ))))
+   `(helm-bookmark-info                        ((t ( :foreground ,gruvbox-turquoise4 ))))
+   `(helm-bookmark-man                         ((t ( :foreground ,gruvbox-sienna ))))
+   `(helm-bookmark-w3m                         ((t ( :foreground ,gruvbox-neutral_yellow ))))
+   `(helm-buffer-directory                     ((t ( :foreground ,gruvbox-white         :background ,gruvbox-bright_blue  ))))
+   `(helm-buffer-not-saved                     ((t ( :foreground ,gruvbox-faded_red ))))
+   `(helm-buffer-process                       ((t ( :foreground ,gruvbox-burlywood4 ))))
+   `(helm-buffer-saved-out                     ((t ( :foreground ,gruvbox-bright_red ))))
+   `(helm-buffer-size                          ((t ( :foreground ,gruvbox-bright_purple ))))
+   `(helm-candidate-number                     ((t ( :foreground ,gruvbox-neutral_green ))))
+   `(helm-ff-directory                         ((t ( :foreground ,gruvbox-neutral_purple ))))
+   `(helm-ff-executable                        ((t ( :foreground ,gruvbox-turquoise4  ))))
+   `(helm-ff-file                              ((t ( :foreground ,gruvbox-sienna ))))
+   `(helm-ff-invalid-symlink                   ((t ( :foreground ,gruvbox-white         :background ,gruvbox-bright_red   ))))
+   `(helm-ff-prefix                            ((t ( :foreground ,gruvbox-black         :background ,gruvbox-neutral_yellow))))
+   `(helm-ff-symlink                           ((t ( :foreground ,gruvbox-neutral_orange ))))
+   `(helm-grep-cmd-line                        ((t ( :foreground ,gruvbox-neutral_green ))))
+   `(helm-grep-file                            ((t ( :foreground ,gruvbox-faded_purple ))))
+   `(helm-grep-finish                          ((t ( :foreground ,gruvbox-turquoise4 ))))
+   `(helm-grep-lineno                          ((t ( :foreground ,gruvbox-neutral_orange ))))
+   `(helm-grep-match                           ((t ( :foreground ,gruvbox-neutral_yellow ))))
+   `(helm-grep-running                         ((t ( :foreground ,gruvbox-neutral_red ))))
+   `(helm-header                               ((t ( :foreground ,gruvbox-aquamarine4 ))))
+   `(helm-helper                               ((t ( :foreground ,gruvbox-aquamarine4 ))))
+   `(helm-history-deleted                      ((t ( :foreground ,gruvbox-black         :background ,gruvbox-bright_red   ))))
+   `(helm-history-remote                       ((t ( :foreground ,gruvbox-faded_red ))))
+   `(helm-lisp-completion-info                 ((t ( :foreground ,gruvbox-faded_orange ))))
+   `(helm-lisp-show-completion                 ((t ( :foreground ,gruvbox-bright_red ))))
+   `(helm-locate-finish                        ((t ( :foreground ,gruvbox-white         :background ,gruvbox-aquamarine4  ))))
+   `(helm-match                                ((t ( :foreground ,gruvbox-neutral_orange ))))
+   `(helm-moccur-buffer                        ((t ( :foreground ,gruvbox-bright_aqua :underline t                          ))))
+   `(helm-prefarg                              ((t ( :foreground ,gruvbox-turquoise4 ))))
+   `(helm-selection                            ((t ( :foreground ,gruvbox-white         :background ,gruvbox-dark2        ))))
+   `(helm-selection-line                       ((t ( :foreground ,gruvbox-white         :background ,gruvbox-dark2        ))))
+   `(helm-separator                            ((t ( :foreground ,gruvbox-faded_red ))))
+   `(helm-source-header                        ((t ( :foreground ,gruvbox-light2 ))))
+   `(helm-visible-mark                         ((t ( :foreground ,gruvbox-black         :background ,gruvbox-light3       ))))
 
-    ;; company-mode
-    `(company-scrollbar-bg              ((t (:background ,gruvbox-dark1))))
-    `(company-scrollbar-fg              ((t (:background ,gruvbox-dark0_soft))))
-    `(company-tooltip                   ((t (:background ,gruvbox-dark0_soft))))
-    `(company-tooltip-annotation        ((t (:foreground ,gruvbox-neutral_green))))
-    `(company-tooltip-selection         ((t (:foreground ,gruvbox-neutral_purple))))
-    `(company-tooltip-common            ((t (:foreground ,gruvbox-neutral_blue :underline t))))
-    `(company-tooltip-common-selection  ((t (:foreground ,gruvbox-neutral_blue :underline t))))
-    `(company-preview-common            ((t (:foreground ,gruvbox-neutral_purple))))
+   ;; company-mode
+   `(company-scrollbar-bg              ((t (:background ,gruvbox-dark1))))
+   `(company-scrollbar-fg              ((t (:background ,gruvbox-dark0_soft))))
+   `(company-tooltip                   ((t (:background ,gruvbox-dark0_soft))))
+   `(company-tooltip-annotation        ((t (:foreground ,gruvbox-neutral_green))))
+   `(company-tooltip-selection         ((t (:foreground ,gruvbox-neutral_purple))))
+   `(company-tooltip-common            ((t (:foreground ,gruvbox-neutral_blue :underline t))))
+   `(company-tooltip-common-selection  ((t (:foreground ,gruvbox-neutral_blue :underline t))))
+   `(company-preview-common            ((t (:foreground ,gruvbox-neutral_purple))))
 
-    ;; Term
-    `(term-color-black                  ((t (:foreground ,gruvbox-dark1))))
-    `(term-color-blue                   ((t (:foreground ,gruvbox-neutral_blue))))
-    `(term-color-cyan                   ((t (:foreground ,gruvbox-neutral_aqua))))
-    `(term-color-green                  ((t (:foreground ,gruvbox-neutral_green))))
-    `(term-color-magenta                ((t (:foreground ,gruvbox-neutral_purple))))
-    `(term-color-red                    ((t (:foreground ,gruvbox-neutral_red))))
-    `(term-color-white                  ((t (:foreground ,gruvbox-light1))))
-    `(term-color-yellow                 ((t (:foreground ,gruvbox-neutral_yellow))))
-    `(term-default-fg-color             ((t (:foreground ,gruvbox-light0))))
-    `(term-default-bg-color             ((t (:background ,gruvbox-dark0)))))
+   ;; powerline
+   `(powerline-active1                 ((t (:background ,gruvbox-neutral_green :foreground ,gruvbox-dark0_soft ))))
+   `(powerline-active2                 ((t (:inherit mode-line ))))
+   `(powerline-inactive1               ((t (:background ,gruvbox-medium :foreground ,gruvbox-dark0))))
+   `(powerline-inactive2               ((t (:background ,gruvbox-dark2 :inherit mode-line-inactive ))))
 
-(custom-theme-set-variables
-  'gruvbox
+   ;; anzu
+   `(anzu-mode-line                    ((t (:foreground ,gruvbox-neutral_red ))))
 
-  `(ansi-color-names-vector [,gruvbox-dark1 ,gruvbox-neutral_red
-    ,gruvbox-neutral_green ,gruvbox-neutral_yellow ,gruvbox-neutral_blue
-    ,gruvbox-neutral_purple ,gruvbox-neutral_aqua ,gruvbox-light1])))
+   ;; git-gutter
+   `(git-gutter:added                  ((t (:foreground ,gruvbox-neutral_aqua ))))
+   `(git-gutter:modified                  ((t (:foreground ,gruvbox-neutral_yellow ))))
+   `(git-gutter:deleted                  ((t (:foreground ,gruvbox-neutral_red ))))
+
+   ;; magit
+   `(magit-section-highlight           ((t (:background ,gruvbox-dark1))))
+   `(magit-section-heading             ((t (:foreground ,gruvbox-neutral_yellow :weight bold))))
+   `(magit-section-heading-selection   ((t (:foreground ,gruvbox-neutral_orange :weight bold))))
+   `(magit-diff-file-heading           ((t (:weight bold))))
+   `(magit-diff-file-heading-highlight ((t (:background ,gruvbox-dark4  :weight bold))))
+   `(magit-diff-file-heading-selection ((t (:background ,gruvbox-dark4
+                                                        :foreground ,gruvbox-neutral_orange :weight bold))))
+   `(magit-diff-hunk-heading           ((t (:background ,gruvbox-dark1))))
+   `(magit-diff-hunk-heading-highlight ((t (:background ,gruvbox-dark2))))
+   `(magit-diff-hunk-heading-selection ((t (:background ,gruvbox-dark2 :foreground ,gruvbox-neutral_orange))))
+   `(magit-diff-lines-heading          ((t (:background ,gruvbox-neutral_orange :foreground ,gruvbox-dark0))))
+   `(magit-diff-context-highlight      ((t (:background ,gruvbox-dark0_soft :foreground "grey70"))))
+   `(magit-diffstat-added   ((t (:foreground ,gruvbox-bright_green))))
+   `(magit-diffstat-removed ((t (:foreground ,gruvbox-neutral_red))))
+   `(magit-popup-heading             ((t (:foreground ,gruvbox-neutral_yellow  :weight bold))))
+   `(magit-popup-key                 ((t (:foreground ,gruvbox-faded_green :weight bold))))
+   `(magit-popup-argument            ((t (:foreground ,gruvbox-neutral_green   :weight bold))))
+   `(magit-popup-disabled-argument   ((t (:foreground ,gruvbox-light2    :weight normal))))
+   `(magit-popup-option-value        ((t (:foreground ,gruvbox-faded_blue  :weight bold))))
+   `(magit-process-ok    ((t (:foreground ,gruvbox-neutral_green  :weight bold))))
+   `(magit-process-ng    ((t (:foreground ,gruvbox-neutral_red    :weight bold))))
+   `(magit-log-author    ((t (:foreground ,gruvbox-neutral_orange))))
+   `(magit-log-date      ((t (:foreground ,gruvbox-light2))))
+   `(magit-log-graph     ((t (:foreground ,gruvbox-light0))))
+   `(magit-sequence-pick ((t (:foreground ,gruvbox-faded_yellow))))
+   `(magit-sequence-stop ((t (:foreground ,gruvbox-neutral_green))))
+   `(magit-sequence-part ((t (:foreground ,gruvbox-neutral_yellow))))
+   `(magit-sequence-head ((t (:foreground ,gruvbox-neutral_blue))))
+   `(magit-sequence-drop ((t (:foreground ,gruvbox-neutral_red))))
+   `(magit-sequence-done ((t (:foreground ,gruvbox-light2))))
+   `(magit-sequence-onto ((t (:foreground ,gruvbox-light2))))
+   `(magit-bisect-good ((t (:foreground ,gruvbox-neutral_green))))
+   `(magit-bisect-skip ((t (:foreground ,gruvbox-neutral_yellow))))
+   `(magit-bisect-bad  ((t (:foreground ,gruvbox-neutral_red))))
+   `(magit-blame-heading ((t (:background ,gruvbox-dark0_hard :foreground ,gruvbox-faded_blue))))
+   `(magit-blame-hash    ((t (:background ,gruvbox-dark0_hard :foreground ,gruvbox-faded_blue))))
+   `(magit-blame-name    ((t (:background ,gruvbox-dark0_hard :foreground ,gruvbox-neutral_orange))))
+   `(magit-blame-date    ((t (:background ,gruvbox-dark0_hard :foreground ,gruvbox-neutral_orange))))
+   `(magit-blame-summary ((t (:background ,gruvbox-dark0_hard :foreground ,gruvbox-faded_blue :weight bold))))
+   `(magit-dimmed         ((t (:foreground ,gruvbox-dark3))))
+   `(magit-hash           ((t (:foreground ,gruvbox-dark3))))
+   `(magit-tag            ((t (:foreground ,gruvbox-neutral_orange :weight bold))))
+   `(magit-branch-remote  ((t (:foreground ,gruvbox-neutral_green  :weight bold))))
+   `(magit-branch-local   ((t (:foreground ,gruvbox-neutral_blue   :weight bold))))
+   `(magit-branch-current ((t (:foreground ,gruvbox-neutral_blue   :weight bold :box t))))
+   `(magit-head           ((t (:foreground ,gruvbox-neutral_blue   :weight bold))))
+   `(magit-refname        ((t (:background ,gruvbox-dark2 :foreground ,gruvbox-light1 :weight bold))))
+   `(magit-refname-stash  ((t (:background ,gruvbox-dark2 :foreground ,gruvbox-light1 :weight bold))))
+   `(magit-refname-wip    ((t (:background ,gruvbox-dark2 :foreground ,gruvbox-light1 :weight bold))))
+   `(magit-signature-good      ((t (:foreground ,gruvbox-neutral_green))))
+   `(magit-signature-bad       ((t (:foreground ,gruvbox-neutral_red))))
+   `(magit-signature-untrusted ((t (:foreground ,gruvbox-neutral_yellow))))
+   `(magit-cherry-unmatched    ((t (:foreground ,gruvbox-neutral_aqua))))
+   `(magit-cherry-equivalent   ((t (:foreground ,gruvbox-neutral_purple))))
+   `(magit-reflog-commit       ((t (:foreground ,gruvbox-neutral_green))))
+   `(magit-reflog-amend        ((t (:foreground ,gruvbox-neutral_purple))))
+   `(magit-reflog-merge        ((t (:foreground ,gruvbox-neutral_green))))
+   `(magit-reflog-checkout     ((t (:foreground ,gruvbox-neutral_blue))))
+   `(magit-reflog-reset        ((t (:foreground ,gruvbox-neutral_red))))
+   `(magit-reflog-rebase       ((t (:foreground ,gruvbox-neutral_purple))))
+   `(magit-reflog-cherry-pick  ((t (:foreground ,gruvbox-neutral_green))))
+   `(magit-reflog-remote       ((t (:foreground ,gruvbox-neutral_aqua))))
+   `(magit-reflog-other        ((t (:foreground ,gruvbox-neutral_aqua))))
+
+   ;; show paren
+   `(show-paren-match                  ((t (:background ,gruvbox-faded_blue ))))
+
+   ;; Term
+   `(term-color-black                  ((t (:foreground ,gruvbox-dark1))))
+   `(term-color-blue                   ((t (:foreground ,gruvbox-neutral_blue))))
+   `(term-color-cyan                   ((t (:foreground ,gruvbox-neutral_aqua))))
+   `(term-color-green                  ((t (:foreground ,gruvbox-neutral_green))))
+   `(term-color-magenta                ((t (:foreground ,gruvbox-neutral_purple))))
+   `(term-color-red                    ((t (:foreground ,gruvbox-neutral_red))))
+   `(term-color-white                  ((t (:foreground ,gruvbox-light1))))
+   `(term-color-yellow                 ((t (:foreground ,gruvbox-neutral_yellow))))
+   `(term-default-fg-color             ((t (:foreground ,gruvbox-light0))))
+   `(term-default-bg-color             ((t (:background ,gruvbox-dark0)))))
+
+  (custom-theme-set-variables
+   'gruvbox
+
+   `(ansi-color-names-vector [,gruvbox-dark1 ,gruvbox-neutral_red
+                                             ,gruvbox-neutral_green ,gruvbox-neutral_yellow ,gruvbox-neutral_blue
+                                             ,gruvbox-neutral_purple ,gruvbox-neutral_aqua ,gruvbox-light1])))
 
 (defun gruvbox-set-ansi-color-names-vector ()
   "Give comint and the like the same colours as the term colours we set."
   (setq ansi-color-names-vector
-    [term-color-black term-color-red term-color-green term-color-yellow term-color-blue
-     term-color-purple term-color-aqua term-color-white]))
+        [term-color-black term-color-red term-color-green term-color-yellow term-color-blue
+                          term-color-purple term-color-aqua term-color-white]))
 
 ;;;###autoload
 (and load-file-name
-    (boundp 'custom-theme-load-path)
-    (add-to-list 'custom-theme-load-path
-                 (file-name-as-directory
-                  (file-name-directory load-file-name))))
+     (boundp 'custom-theme-load-path)
+     (add-to-list 'custom-theme-load-path
+                  (file-name-as-directory
+                   (file-name-directory load-file-name))))
 
 (provide-theme 'gruvbox)
 
