@@ -117,6 +117,9 @@
    `(secondary-selection               ((t (:background ,gruvbox-dark1))))
    `(minibuffer-prompt                 ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-neutral_green :bold t))))
 
+   ;; Inactive buffer (auto-dim-other-buffers)
+   `(auto-dim-other-buffers-face       ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-light1))))
+
    ;; Built-in syntax
    `(font-lock-builtin-face            ((t (:foreground ,gruvbox-neutral_orange))))
    `(font-lock-constant-face           ((t (:foreground ,gruvbox-violet))))
