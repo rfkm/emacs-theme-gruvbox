@@ -133,16 +133,16 @@
    `(font-lock-warning-face            ((t (:foreground ,gruvbox-neutral_red :bold t))))
 
    ;; whitespace-mode
-   `(whitespace-space                  ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-   `(whitespace-hspace                 ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-   `(whitespace-tab                    ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-   `(whitespace-newline                ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-space                  ((t (:foreground ,gruvbox-dark4))))
+   `(whitespace-hspace                 ((t (:foreground ,gruvbox-dark4))))
+   `(whitespace-tab                    ((t (:foreground ,gruvbox-dark4))))
+   `(whitespace-newline                ((t (:foreground ,gruvbox-dark4))))
    `(whitespace-trailing               ((t (:background ,gruvbox-neutral_red))))
    `(whitespace-line                   ((t (:background ,gruvbox-dark1 :foreground ,gruvbox-neutral_red))))
-   `(whitespace-space-before-tab       ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
-   `(whitespace-indentation            ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-space-before-tab       ((t (:foreground ,gruvbox-dark4))))
+   `(whitespace-indentation            ((t (:foreground ,gruvbox-dark4))))
    `(whitespace-empty                  ((t (:background ,gruvbox-neutral_red))))
-   `(whitespace-space-after-tab        ((t (:background ,gruvbox-dark0 :foreground ,gruvbox-dark4))))
+   `(whitespace-space-after-tab        ((t (:foreground ,gruvbox-dark4))))
 
    ;; RainbowDelimiters
    `(rainbow-delimiters-depth-1-face   ((t (:foreground ,gruvbox-delimiter-one))))
